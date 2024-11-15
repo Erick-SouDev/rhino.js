@@ -39,6 +39,10 @@ namespace SampleCsCommands
  
       if (curve.IsValid)
       {
+        var length = curve.GetLength();
+        var domain = new Interval(0.0, length);
+        curve.Domain = domain;
+
         doc.Objects.AddCurve(curve);
         doc.Views.Redraw();
       } 

@@ -61,6 +61,11 @@ namespace SampleCsCommands
 
       if (curve.IsValid)
       {
+        // Parameterization should match the length of a curve
+        var length = curve.GetLength();
+        var domain = new Interval(0.0, length);
+        curve.Domain = domain;
+
         doc.Objects.AddCurve(curve);
         doc.Views.Redraw();
       } 
