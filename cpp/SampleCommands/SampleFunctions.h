@@ -163,6 +163,11 @@ bool RhinoHasFocus();
 /// </summary>
 bool IsRhinoReparented();
 
+/// <summary>
+/// Returns module handle where "this" function is running in: EXE or DLL.
+/// </summary>
+HMODULE FancyGetModuleHandle();
+
 
 /// <summary>
 /// CRhinoDoc::BeginUndoRecord and CRhinoDoc::EndUndoRecord helper.

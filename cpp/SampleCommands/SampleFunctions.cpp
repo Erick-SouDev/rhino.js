@@ -412,6 +412,20 @@ bool IsRhinoReparented()
   return hParent != hDesktop;
 }
 
+/// <summary>
+/// Returns module handle where "this" function is running in: EXE or DLL.
+/// </summary>
+HMODULE FancyGetModuleHandle()
+{
+  HMODULE hModule = NULL;
+  ::GetModuleHandleEx(
+    GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
+    (LPCTSTR)FancyGetModuleHandle,
+    &hModule
+  );
+  return hModule;
+}
+
 
 /// <summary>
 /// Begin a CRhinoDoc undo record.
