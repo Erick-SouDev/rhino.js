@@ -78,9 +78,8 @@ namespace SampleCsWithLicense
     //  is displayed if a license for the requesting product is not found. Note, the
     //  "Close" button will always be displayed.
     /// </summary>
-    private static LicenseCapabilities Capabilities => LicenseCapabilities.CanBeEvaluated |
-                                                       LicenseCapabilities.CanBePurchased |
-                                                       LicenseCapabilities.CanBeSpecified;
+    private static LicenseCapabilities Capabilities => LicenseCapabilities.SupportsRhinoAccounts |
+                                                       LicenseCapabilities.SupportsLicenseDiscovery;
 
     #endregion
 
