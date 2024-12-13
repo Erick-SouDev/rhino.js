@@ -79,7 +79,8 @@ namespace SampleCsWithLicense
     //  "Close" button will always be displayed.
     /// </summary>
     private static LicenseCapabilities Capabilities => LicenseCapabilities.SupportsRhinoAccounts |
-                                                       LicenseCapabilities.SupportsLicenseDiscovery;
+                                                       LicenseCapabilities.SupportsStandalone |
+                                                       LicenseCapabilities.SupportsZooPerUser;
 
     #endregion
 
@@ -150,6 +151,8 @@ namespace SampleCsWithLicense
         var expire = today.AddDays(90);
         licenseData.DateToExpire = expire;
       }
+
+      var rc = licenseData.IsValid();
 
       return ValidateResult.Success;
     }
